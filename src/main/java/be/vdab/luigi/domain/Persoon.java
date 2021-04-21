@@ -7,7 +7,8 @@ public class Persoon {
     private final String familienaam;
     private final int aantalKinderen;
     private final boolean gehuwd;
-    private final LocalDate geboorte; private final Adres adres;
+    private final LocalDate geboorte;
+    private final Adres adres;
 
     public Persoon(String voornaam, String familienaam, int aantalKinderen, boolean gehuwd, LocalDate geboorte, Adres adres) {
         this.voornaam = voornaam;
