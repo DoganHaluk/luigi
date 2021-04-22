@@ -13,12 +13,14 @@
     <tr>
         <th>Naam</th>
         <th>Prijs</th>
+        <th>Pikant</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="pizza:${pizzas}" th:object="${pizza}">
         <td th:text="*{naam}"></td>
         <td th:text="*{prijs}"></td>
+        <td><span th:if="*{pikant}">pikant</span></td>
     </tr>
     </tbody>
 </table>
