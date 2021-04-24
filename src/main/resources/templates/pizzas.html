@@ -20,7 +20,7 @@
     <tr th:each="pizza:${pizzas}" th:object="${pizza}">
         <td th:text="*{naam}"></td>
         <td th:text="*{prijs}"></td>
-        <td><span th:if="*{pikant}">pikant</span></td>
+        <td><th:block th:if="*{pikant}">pikant</th:block></td>
     </tr>
     </tbody>
 </table>
