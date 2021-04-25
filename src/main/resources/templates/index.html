@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Pizza Luigi</title>
-    <link rel="icon" href="images/luigi.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/luigi.css">
+    <link rel="icon" th:href="@{/images/luigi.ico}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/css/luigi.css}">
 </head>
 <body>
 <h1>Pizza Luigi</h1>
-<img src="images/luigi.jpg" alt="pizza" class="fullwidth">
+<img th:src="@{/images/luigi.jpg}" alt="pizza" class="fullwidth">
 <h3>Goede <th:block th:text="${moment}"></th:block></h3>
 <h2>De zaakvoerder</h2>
 <dl th:object="${zaakvoerder}">
