@@ -5,7 +5,9 @@
 <nav th:replace="fragments::menu"></nav>
 <h1>Pizza Luigi</h1>
 <img th:src="@{/images/luigi.jpg}" alt="pizza" class="fullwidth">
-<h3>Goede <th:block th:text="${moment}"></th:block></h3>
+<h3>Goede
+    <th:block th:text="${moment}"></th:block>
+</h3>
 <h2>De zaakvoerder</h2>
 <dl th:object="${zaakvoerder}">
     <dt>Naam</dt>
