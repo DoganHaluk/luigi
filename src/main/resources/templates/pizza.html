@@ -3,9 +3,9 @@
 <head th:replace="fragments::head(title = ${pizza} ? ${pizza.naam} :'Pizza niet gevonden')"></head>
 <body>
 <nav th:replace="fragments::menu"></nav>
-<!--<div th:if="not ${pizza}" class=fout">Pizza niet gevonden:
+<div th:if="not ${pizza}">Pizza niet gevonden:
     <th:block th:text="${id}"></th:block>
-</div>-->
+</div>
 <th:block th:if="${pizza}" th:object="${pizza}">
     <h1 th:text="*{naam}"></h1>
     <dl>
