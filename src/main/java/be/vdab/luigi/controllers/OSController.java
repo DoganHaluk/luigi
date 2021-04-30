@@ -11,12 +11,13 @@ import java.util.Arrays;
 @Controller
 @RequestMapping("os")
 class OSController {
-    private static final String[] OSS = {"Windows","Macintosh","Android","Linux"};
+    private static final String[] OSS = {"Windows", "Macintosh", "Android", "Linux"};
+
     @GetMapping
     public ModelAndView os(@RequestHeader("User-Agent") String userAgent) {
         var modelAndView = new ModelAndView("os");
         Arrays.stream(OSS).filter(os -> userAgent.contains(os))
-.findFirst().ifPresent(os -> modelAndView.addObject("os", os));
+                .findFirst().ifPresent(os -> modelAndView.addObject("os", os));
         return modelAndView;
     }
 }
