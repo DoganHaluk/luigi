@@ -21,8 +21,7 @@ public class KleurController {
         return modelAndView;
     }
     @GetMapping("{kleur}")
-    public String kiesKleur(@PathVariable String kleur,
-                            HttpServletResponse response) {
+    public String kiesKleur(@PathVariable String kleur, HttpServletResponse response) {
         var cookie = new Cookie("kleur", kleur);
         cookie.setMaxAge(EEN_JAAR_IN_SECONDEN);
         cookie.setPath("/");
