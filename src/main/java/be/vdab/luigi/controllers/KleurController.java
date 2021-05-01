@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
 
 @Controller
 @RequestMapping("kleuren")
-public class KleurController {
+class KleurController {
     private static final int EEN_JAAR_IN_SECONDEN = 31_536_000;
     @GetMapping
     public ModelAndView toonPagina(@CookieValue Optional<String> kleur) {
