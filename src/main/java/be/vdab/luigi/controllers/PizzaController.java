@@ -56,8 +56,7 @@ class PizzaController {
     }
     @GetMapping("prijzen/{prijs}")
     public ModelAndView pizzasMetEenPrijs(@PathVariable BigDecimal prijs) {
-        var modelAndView = new ModelAndView("prijzen", "pizzas", pizzasMetPrijs(prijs));
-        modelAndView.addObject("prijzen", uniekePrijzen());
-        return modelAndView;
+        return new ModelAndView("prijzen", "pizzas", pizzasMetPrijs(prijs))
+                .addObject("prijzen", uniekePrijzen());
     }
 }
