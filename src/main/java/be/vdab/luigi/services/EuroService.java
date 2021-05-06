@@ -9,7 +9,7 @@ import java.math.RoundingMode;
 @Service
 class EuroService {
     private final KoersClient koersClient;
-    EuroService(KoersClient ) {
+    EuroService(KoersClient koersClient) {
         this.koersClient = koersClient;
     }
     public BigDecimal naarDollar(BigDecimal euro) {
