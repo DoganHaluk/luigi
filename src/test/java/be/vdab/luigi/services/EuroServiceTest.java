@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
 
 import java.math.BigDecimal;
 
@@ -22,7 +25,7 @@ class EuroServiceTest {
     @Test
     void naarDollar() {
         when(koersClient.getDollarKoers()).thenReturn(BigDecimal.valueOf(1.5));
-        assertThat(euroService.naarDollar(BigDecimal.valueOf(2))) .isEqualByComparingTo("3");
+        assertThat(euroService.naarDollar(BigDecimal.valueOf(2))).isEqualByComparingTo("3");
         verify(koersClient).getDollarKoers();
     }
 }
