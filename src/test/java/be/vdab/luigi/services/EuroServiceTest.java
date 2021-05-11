@@ -19,7 +19,7 @@ class EuroServiceTest {
     private EuroService euroService;
     @BeforeEach
     void beforeEach() {
-        euroService = new EuroService(koersClient);
+        euroService = new DefaultEuroService(koersClient);
     }
 
     @Test
