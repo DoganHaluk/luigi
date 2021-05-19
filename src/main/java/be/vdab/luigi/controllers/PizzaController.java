@@ -68,7 +68,7 @@ class PizzaController {
 
     private List<Pizza> pizzasMetPrijs(BigDecimal prijs) {
         return Arrays.stream(pizzas)
-                .filter(pizza -> pizza.getPrijs().compareTo(prijs) == 0)
+                .filter(pizza -> pizza.getPrijs().equals(prijs))
                 .collect(Collectors.toList());
     }
 

@@ -18,7 +18,7 @@ class FixerKoersClient implements KoersClient {
         try {
             url = new URL("http://data.fixer.io/api/latest?access_key=123a6790e81d1564f6867c97893f3c7e&symbols=USD");
         } catch (MalformedURLException ex) {
-            throw new KoersClientException("Fixer URL is verkeerd.");
+            throw new KoersClientException("Fixer URL is verkeerd");
         }
     }
 
