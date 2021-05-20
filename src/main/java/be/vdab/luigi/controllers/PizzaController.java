@@ -47,7 +47,7 @@ class PizzaController {
                         modelAndView.addObject(
                                 "inDollar", euroService.naarDollar(pizza.getPrijs()));
                     } catch (KoersClientException ex) {
-    // Hier komt later code die de exception verwerkt.
+                        // Hier komt later code die de exception verwerkt.
                     }
                 });
         return modelAndView;
