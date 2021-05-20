@@ -2,7 +2,6 @@ package be.vdab.luigi.services;
 
 import be.vdab.luigi.exceptions.KoersClientException;
 import be.vdab.luigi.restclients.KoersClient;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
