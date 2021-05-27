@@ -40,7 +40,7 @@ class JdbcPizzaRepositoryTest extends AbstractTransactionalJUnit4SpringContextTe
 
     @Test
     void create() {
-        var id = repository.create(new Pizza(0, "test2", BigDecimal.TEN, false));
+        var id = repository.create(new Pizza(0, "test3", BigDecimal.TEN, false));
         assertThat(id).isPositive();
         assertThat(countRowsInTableWhere(PIZZAS, "id = " + id)).isOne();
     }
@@ -73,7 +73,7 @@ class JdbcPizzaRepositoryTest extends AbstractTransactionalJUnit4SpringContextTe
     @Test
     void update() {
         var id = idVanTestPizza();
-        var pizza = new Pizza(id, "test", BigDecimal.TEN, false);
+        var pizza = new Pizza(id, "test", BigDecimal.TEN, true);
         repository.update(pizza);
         assertThat(countRowsInTableWhere(PIZZAS, "prijs=10 and id=" + id)).isOne();
     }

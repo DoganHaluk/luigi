@@ -90,7 +90,7 @@ public class JdbcPizzaRepository implements PizzaRepository {
 
     @Override
     public List<Pizza> findByIds(Set<Long> ids) {
-        if (ids.isEmpty() || ids.size()<=1) {
+        if (ids.isEmpty() || ids.size() <= 1) {
             return List.of();
         }
         var sql = "select id, naam, prijs, pikant from pizzas where id in (?,".repeat(ids.size() - 1) + "?) order by id";
