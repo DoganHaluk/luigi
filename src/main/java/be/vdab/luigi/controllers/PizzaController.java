@@ -1,5 +1,6 @@
 package be.vdab.luigi.controllers;
 
+import be.vdab.luigi.domain.Pizza;
 import be.vdab.luigi.exceptions.KoersClientException;
 import be.vdab.luigi.forms.VanTotPrijsForm;
 import be.vdab.luigi.services.EuroService;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -66,10 +68,24 @@ class PizzaController {
     @GetMapping("vantotprijs")
     public ModelAndView vanTotPrijs(@Valid VanTotPrijsForm form, Errors errors) {
         var modelAndVieW = new ModelAndView("vantotprijs");
-        if(errors.hasErrors()){
+        if (errors.hasErrors()) {
             return modelAndVieW;
         }
         return modelAndVieW.addObject("pizzas",
                 pizzaService.findByPrijsBetween(form.getVan(), form.getTot()));
+    }
+
+    @GetMapping("toevoegen/form")
+    public ModelAndView toevoegenForm() {
+        return new ModelAndView("toevoegen").addObject(new Pizza(0, "", null, false));
+    }
+
+    @PostMapping
+    public ModelAndView toevoegen(@Valid Pizza pizza, Errors errors) {
+        if (errors.hasErrors()) {
+            return new ModelAndView("toevoegen");
+        }
+        pizzaService.create(pizza);
+        return new ModelAndView("pizzas", "pizzas", pizzaService.findAll());
     }
 }

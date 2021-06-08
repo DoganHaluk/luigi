@@ -1,10 +1,16 @@
 package be.vdab.luigi.domain;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 import java.math.BigDecimal;
 
 public class Pizza {
     private final long id;
+    @NotBlank
     private final String naam;
+    @NotNull
+    @PositiveOrZero
     private final BigDecimal prijs;
     private final boolean pikant;
 
