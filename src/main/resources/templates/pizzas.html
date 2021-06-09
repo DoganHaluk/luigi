@@ -3,13 +3,8 @@
 <head th:replace="fragments::head(title='Pizza\'s')"></head>
 <body>
 <nav th:replace="fragments::menu"></nav>
+<div th:if="${param.idNieuwePizza}" class="boodschap">Pizza is toegevoegd. Zijn nummer:<th:block th:text="${param.idNieuwePizza}"></th:block>.</div>
 <h1>Pizza's</h1>
 <table th:replace="fragments::pizzaTabel(pizzas=${pizzas})"></table>
-<ul th:each="getal:${getallen}">
-    <li th:text="${getal}"></li>
-</ul>
-<ul th:each="entry:${landen}">
-    <li th:text="|${entry.key} ${entry.value}|"></li>
-</ul>
 </body>
 </html>
