@@ -14,15 +14,18 @@ import org.springframework.web.servlet.ModelAndView;
 class MandjeController {
     private final Mandje mandje;
     private final PizzaService pizzaService;
+
     public MandjeController(Mandje mandje, PizzaService pizzaService) {
         this.mandje = mandje;
         this.pizzaService = pizzaService;
     }
 
-    @PostMapping("{id}") public String voegToe(@PathVariable long id) {
+    @PostMapping("{id}")
+    public String voegToe(@PathVariable long id) {
         mandje.voegToe(id);
         return "redirect:/mandje";
     }
+
     @GetMapping
     public ModelAndView toonMandje() {
         return new ModelAndView("mandje",

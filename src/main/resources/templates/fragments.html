@@ -31,7 +31,7 @@
         <tbody>
         <tr th:each="pizza:${pizzas}" th:object="${pizza}">
             <td><a th:text="*{naam}" th:href="@{/pizzas/{id}(id=*{id})}"></a></td>
-            <td th:text="*{prijs}"></td>
+            <td th:text="*{{prijs}}"></td>
             <td>
                 <th:block th:if="*{pikant}">pikant</th:block>
             </td>

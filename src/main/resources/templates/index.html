@@ -13,6 +13,8 @@
 <dl th:object="${zaakvoerder}">
     <dt>Naam</dt>
     <dd th:text="*{naam}"></dd>
+    <dt>Geboorte</dt>
+    <dd th:text="*{{geboorte}}"></dd>
     <dt>Aantal kinderen</dt>
     <dd th:text="*{aantalKinderen}"></dd>
     <dt>Gehuwd</dt>

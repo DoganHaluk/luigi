@@ -6,12 +6,12 @@
 <h1>Prijzen</h1>
 <ul>
     <li th:each="prijs:${prijzen}">
-        <a th:href="@{/pizzas/prijzen/{prijs}(prijs=${prijs})}" th:text="${prijs}"></a>
+        <a th:href="@{/pizzas/prijzen/{prijs}(prijs=${prijs})}" th:text="${#numbers.formatDecimal(prijs,1,2)}"></a>
     </li>
 </ul>
 <th:block th:if="${prijs}">
     <h2>Pizzas van
-        <th:block th:text="${prijs}"></th:block>
+        <th:block th:text="${#numbers.formatDecimal(prijs,1,2)}"></th:block>
         €:
     </h2>
     <table th:replace="fragments::pizzaTabel(pizzas=${pizzas})"></table>
