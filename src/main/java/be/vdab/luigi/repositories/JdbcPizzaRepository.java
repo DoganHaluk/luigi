@@ -93,9 +93,7 @@ class JdbcPizzaRepository implements PizzaRepository {
         if (ids.isEmpty()) {
             return List.of();
         }
-        var sql = "select id, naam, prijs, pikant from pizzas where id in (" +
-                "?,".repeat(ids.size() - 1) +
-                "?) order by id";
+        var sql = "select id, naam, prijs, pikant from pizzas where id in (" + "?,".repeat(ids.size() - 1) + "?) order by id";
         return template.query(sql, pizzaMapper, ids.toArray());
     }
 }
